@@ -1,5 +1,7 @@
 package homework3;
 
+import java.math.BigInteger;
+
 public class StatementsUtil {
 
     /**
@@ -59,7 +61,7 @@ public class StatementsUtil {
      * @return true or false
      * */
     public boolean fun6(double a, double b){
-        boolean x = (Math.sqrt(a*a + b*b)) == 5 ? true : false;
+        boolean x = (Math.sqrt(a*a + b*b)) <= 5 ? true : false;
         return x;
     }
 
@@ -71,7 +73,8 @@ public class StatementsUtil {
      * @return true or false
      * */
     public double max(double a, double b, double c){
-        double x = a > b && a > c ? a : b > c ? b : c;
+        //double x = a > b && a > c ? a : b > c ? b : c;
+        double x = a > b ? a > c ? a: c : b > c ? b : c;
         return x;
     }
 
@@ -157,9 +160,9 @@ public class StatementsUtil {
      * Outputs sum of even numbers[10-69]
      * */
     public void fun16(){
-        long x = 1;
-        for (int i = 10; i < 69; i += 2)
-            x *= i;
+        BigInteger x = new BigInteger("1");
+        for (int i = 10; i < 99; i += 2)
+            x = x.multiply(BigInteger.valueOf(i));
         System.out.println(x);
     }
 
@@ -205,5 +208,7 @@ public class StatementsUtil {
             x--;
         }
         System.out.println(x);
+        StatementsUtil my = new StatementsUtil();
+        my.fun16();
     }
 }
