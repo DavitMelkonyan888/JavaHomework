@@ -1,5 +1,7 @@
 package homework4;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -81,7 +83,7 @@ public class Homework {
         }
     }
 
-    public double pow(int a, int b) throws Exception {
+    public double pow(double a, int b) throws Exception {
         if (a == 0 && b == 0){
             throw new ArithmeticException("Can't raise 0 to the power of 0");
         }
@@ -303,7 +305,7 @@ public class Homework {
 
     public void fun12_5(){
         for (int i = 1 ; i < 6; i++){
-            for (int j = 0; j <   (9 - (2 * i - 1)) / 2 ; j++){
+            for (int j = 0; j < (9 - (2 * i - 1)) / 2 ; j++){
                 System.out.print(" ");
             }
             for (int l = 1; l < i + i ; l++ ){
@@ -313,38 +315,50 @@ public class Homework {
         }
     }
 
-    //TODO
     public void fun12_6(){
-
+        for (int i = 1 ; i < 6; i++){
+            for (int j = 0; j < (9 - (2 * i - 1)) / 2 ; j++){
+                System.out.print(" ");
+            }
+            int x = i;
+            for (int l = 1; l < i ; l++ ){
+                System.out.print(x--);
+            }
+            System.out.print(x);
+            for (int l = 1; l < i ; l++ ){
+                System.out.print(++x);
+            }
+            System.out.println();
+        }
     }
 
-    public int fact(int a){
-        if(a == 0 || a < 0) return 1;
-        else return a * fact(a-1);
+    public BigDecimal fact(BigDecimal a){
+        if(a.equals(BigDecimal.valueOf(0)) || a.compareTo(BigDecimal.valueOf(0)) < 0) return BigDecimal.valueOf(1);
+        int b = a.intValue();
+        BigDecimal c = new BigDecimal("1");
+        for (int i = 1; i <= b; i++)
+            c.multiply(BigDecimal.valueOf(i));
+        return c;
     }
 
-    //TODO  returns NaN
-    public double sin(double x, int n){
-        double a = x;
+    //TODO  returns out of range [-1; 1] values
+    public double sin(double x, int n) throws Exception {
+        BigDecimal a = BigDecimal.valueOf(x);
         for (int i = 5; i <= n; i += 4){
-            a += Math.pow(x, i)/fact(i);
+            a = a.add( BigDecimal.valueOf( Math.pow(x, i)).divide( fact( BigDecimal.valueOf(i) ) ) );
+            a = a.subtract( BigDecimal.valueOf( Math.pow(x, i-2)).divide( fact( BigDecimal.valueOf(i-2) ) ) );
         }
-        for (int i = 3; i <= n; i += 4){
-            a -= Math.pow(x, i)/fact(i);
-        }
-        return a;
+        return a.doubleValue();
     }
 
-    //TODO  returns NaN
-    public double cos(double x, int n){
-        double a = 1;
+    //TODO  returns out of range [-1; 1] values
+    public double cos(double x, int n) throws Exception {
+        BigDecimal a = BigDecimal.valueOf(1);
         for (int i = 4; i <= n; i += 4){
-            a += Math.pow(x, i)/fact(i);
+            a = a.add( BigDecimal.valueOf( Math.pow(x, i)).divide( fact( BigDecimal.valueOf(i) ) ) );
+            a = a.subtract( BigDecimal.valueOf( Math.pow(x, i-2)).divide( fact( BigDecimal.valueOf(i-2) ) ) );
         }
-        for (int i = 2; i <= n; i += 4){
-            a -= Math.pow(x, i)/fact(i);
-        }
-        return a;
+        return a.doubleValue();
     }
 
     public static void main(String[] args) throws Exception {
