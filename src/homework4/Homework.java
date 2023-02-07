@@ -344,8 +344,8 @@ public class Homework {
         double x = y * Math.PI / 180;
         double a = x;
         for (int i = 5; i <= n; i += 4){
-            a += Math.pow(x, i) / fact( i );
-            a -= Math.pow(x, i-2) / fact( i-2 );
+            a += pow(x, i) / fact( i );
+            a -= pow(x, i-2) / fact( i-2 );
         }
         return a;
     }
@@ -392,7 +392,8 @@ public class Homework {
         //double a = myy.nextDouble();
         //int b = myy.nextInt();
         //System.out.println(my.sin(a, b));
+        //System.out.println(Math.sin(a*Math.PI/180));
         //System.out.println(my.cos(a, b));
-
+        //System.out.println(Math.cos(a*Math.PI/180));
     }
 }
