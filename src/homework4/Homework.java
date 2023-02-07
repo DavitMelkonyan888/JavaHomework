@@ -2,6 +2,7 @@ package homework4;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -83,11 +84,11 @@ public class Homework {
         }
     }
 
-    public double pow(double a, int b) throws Exception {
+    public double pow(double a, int b) {
         if (a == 0 && b == 0){
-            throw new ArithmeticException("Can't raise 0 to the power of 0");
+            return Double.NaN;
         }
-        int c = 1;
+        double c = 1.0;
         if (a == 0) return 0;
 
         if (b > 0) {
@@ -96,12 +97,12 @@ public class Homework {
         }
         else if (b < 0) {
             for (int i = 0; i > b; i--) c *= a;
-            return 1.0 / c;
+            return 1 / c;
         }
         else return 1;
     }
 
-    public int pol() throws Exception {
+    public int pol() {
         Scanner my = new Scanner(System.in);
         int a = my.nextInt();
         int b = a, i = 0;
@@ -203,7 +204,7 @@ public class Homework {
         System.out.println("Min - " + min);
     }
 
-    public boolean isArm(int a) throws Exception {
+    public boolean isArm(int a) {
         int i = 0;
         int b = a;
         while(b  > 0){
@@ -220,7 +221,7 @@ public class Homework {
         else return false;
     }
 
-    public void typeArm() throws Exception {
+    public void typeArm() {
         for (int i = 1; i < 501; i++){
             if(isArm(i)) System.out.println(i);
         }
@@ -332,36 +333,38 @@ public class Homework {
         }
     }
 
-    public BigDecimal fact(BigDecimal a){
-        if(a.equals(BigDecimal.valueOf(0)) || a.compareTo(BigDecimal.valueOf(0)) < 0) return BigDecimal.valueOf(1);
-        int b = a.intValue();
-        BigDecimal c = new BigDecimal("1");
-        for (int i = 1; i <= b; i++)
-            c.multiply(BigDecimal.valueOf(i));
+    public double fact(int a){
+        if(a <= 0) return 1.0;
+        int b = a;
+        double c = 1.0;
+        for (int i = 2; i <= b; i++)
+            c *= i;
         return c;
     }
 
-    //TODO  returns out of range [-1; 1] values
-    public double sin(double x, int n) throws Exception {
-        BigDecimal a = BigDecimal.valueOf(x);
+    public double sin(double y, int n) {
+        y %= 360;
+        double x = y * Math.PI / 180;
+        double a = x;
         for (int i = 5; i <= n; i += 4){
-            a = a.add( BigDecimal.valueOf( Math.pow(x, i)).divide( fact( BigDecimal.valueOf(i) ) ) );
-            a = a.subtract( BigDecimal.valueOf( Math.pow(x, i-2)).divide( fact( BigDecimal.valueOf(i-2) ) ) );
+            a += Math.pow(x, i) / fact( i );
+            a -= Math.pow(x, i-2) / fact( i-2 );
         }
-        return a.doubleValue();
+        return a;
     }
 
-    //TODO  returns out of range [-1; 1] values
-    public double cos(double x, int n) throws Exception {
-        BigDecimal a = BigDecimal.valueOf(1);
+    public double cos(double y, int n) {
+        y %= 360;
+        double x = y * Math.PI / 180;
+        double a =1.0;
         for (int i = 4; i <= n; i += 4){
-            a = a.add( BigDecimal.valueOf( Math.pow(x, i)).divide( fact( BigDecimal.valueOf(i) ) ) );
-            a = a.subtract( BigDecimal.valueOf( Math.pow(x, i-2)).divide( fact( BigDecimal.valueOf(i-2) ) ) );
+            a += pow(x, i) / fact( i );
+            a -= pow(x, i-2) / fact( i-2 );
         }
-        return a.doubleValue();
+        return a;
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Homework my = new Homework();
         //int x= 5, y=3, z= 24;
         //System.out.println(my.riceBags(x, y, z));
