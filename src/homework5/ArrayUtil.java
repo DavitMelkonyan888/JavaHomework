@@ -116,74 +116,107 @@ public class ArrayUtil {
         return arr2;
     }
     
-    public int[] oddsEnd(int[] a){
+    public int[] oddsEnd (int[] a) {
         int[] b = new int[a.length];
-        int j=0;
-        for (int i : a){
-            if (i%2==0) b[j++] = i;
+        int   j = 0;
+        for (int i : a) {
+            if (i % 2 == 0) {
+                b[j++] = i;
+            }
         }
-        for (int i : a){
-            if (i%2!=0) b[j++] = i;
+        for (int i : a) {
+            if (i % 2 != 0) {
+                b[j++] = i;
+            }
         }
         return b;
     }
     
-    public int[] minus0(int [] a){
-        int l=0;
+    public int[] minus0 (int[] a) {
+        int l = 0;
         for (int i = 0; i < a.length; i++) {
-            if (a[i] != 0) l++;
+            if (a[i] != 0) {
+                l++;
+            }
         }
-        int[] b=new int[l];
-        for (int i = 0, m =0; i < a.length; i++) {
-            if (a[i] != 0) b[m++] =a[i];
+        int[] b = new int[l];
+        for (int i = 0, m = 0; i < a.length; i++) {
+            if (a[i] != 0) {
+                b[m++] = a[i];
+            }
         }
         return b;
     }
-    //TODO
-    public void queue(int[] a){
     
+    public int qan (int[] a, int b) {
+        int qan = 1;
+        for (int i = b; i < a.length - 1; i++) {
+            if (a[i] <= a[i + 1]) {
+                qan++;
+            } else {
+                break;
+            }
+        }
+        return qan;
     }
     
-    public void bin(int[] a){
+    public void queue (int[] a) {
+        int qan = qan(a, 0);
+        int ind = 0;
+        for (int i = 1; i < a.length; i++) {
+            if (qan < qan(a, i)) {
+                qan = qan(a, i);
+                ind = i;
+            }
+        }
+        for (int i = ind; i < ind + qan; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+    
+    public void bin (int[] a) {
         int sum = 0;
-        for (int i = a.length-1, j = 0; i >= 0; i--, j++) {
+        for (int i = a.length - 1, j = 0; i >= 0; i--, j++) {
             sum += a[i] * (int) Math.pow(2, j);
         }
         System.out.println(sum);
     }
     
-    public void tpelGlxVerev(int[][] a){
-        for (int i = 0; i < a.length-1; i++) {
-            for (int j = i+1; j < a[i].length; j++) {
-                System.out.print(a[i][j]+" ");
+    public void tpelGlxVerev (int[][] a) {
+        for (int i = 0; i < a.length - 1; i++) {
+            for (int j = i + 1; j < a[i].length; j++) {
+                System.out.print(a[i][j] + " ");
             }
             System.out.println("");
         }
     }
     
-    public int[][] rotate(int[][] a){
-        int[][] b =new int[a.length][a.length];
+    public int[][] rotate (int[][] a) {
+        int[][] b = new int[a.length][a.length];
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a.length; j++) {
-                b[i][j]= a[j][i];
+                b[i][j] = a[j][i];
             }
         }
         return b;
     }
     
-    public void oddOrEven(int[][] a){
+    public void oddOrEven (int[][] a) {
         boolean t = true;
         for (int i = 0; i < a.length; i++) {
             int sum = 0;
-            for (int j = i+1; j < a[i].length; j++) {
+            for (int j = i + 1; j < a[i].length; j++) {
                 sum += a[i][j];
             }
-            if (sum%2 != 0) t = false;
+            if (sum % 2 != 0) {
+                t = false;
+            }
         }
-        if (t)
+        if (t) {
             System.out.println("YES");
-        else
+        } else {
             System.out.println("NO");
+        }
     }
     
     public static void main (String[] args) {
@@ -195,13 +228,15 @@ public class ArrayUtil {
         //                System.out.print(j + " ");
         //            System.out.println(" ");
         //        }
-        //System.out.println(my.counter(arr, 5));
-//        int[] arr2 = my.dasavorelNvazmanKargov(arr);
-//        for (int i : arr2) {
-//            System.out.print(i + " ");
-//        }
-//        int[] arr2 = new int[]{1, 0, 1, 0, 0, 1, 1};
-//        my.bin(arr2);
-        //my.tpelGlxVerev(arr1);
+        //        System.out.println(my.counter(arr, 5));
+        //        int[] arr2 = my.dasavorelNvazmanKargov(arr);
+        //        for (int i : arr2) {
+        //            System.out.print(i + " ");
+        //        }
+        //        int[] arr2 = new int[]{1, 0, 1, 0, 0, 1, 1};
+        //        my.bin(arr2);
+        //        my.tpelGlxVerev(arr1);
+        //        int[]  array = {1,5,6,4,9,0,4,7,7,9, 1};
+        //        my.queue(array);
     }
 }
