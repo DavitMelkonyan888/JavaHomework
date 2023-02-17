@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ArrayUtil {
     
     public void typePositives (int[] n) {
-        for (int i = 0; i < n.length; i++) {
+        for (int i = 0; i < n.length; i++) { 
             if (n[i] > 0) {
                 System.out.println(n[i]);
             }
@@ -87,7 +87,7 @@ public class ArrayUtil {
         int      n   = (int) (my.fact(a.length) / (my.fact(a.length - 3) * my.fact(3)));
         int[][]  arr = new int[n][3];
         int      l   = 0, m = 0;
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < a.length-2; i++) {
             for (int j = 1; j < a.length - i; j++) {
                 for (int k = 1; k < a.length - i - j; k++) {
                     m %= 3;
