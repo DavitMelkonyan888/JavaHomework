@@ -144,7 +144,7 @@ public class StringUtil {
     public int indexOf(String a, String b){
         int q = 0;
         boolean p = false;
-        for (int i = 0; i < a.length(); i++) {
+        for (int i = 0; i <= a.length()-b.length(); i++) {
             int t = 0;
             for (int j = 0; j < b.length(); j++) {
                 if (a.charAt(i+j) == b.charAt(j)) t++;

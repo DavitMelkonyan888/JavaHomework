@@ -2,6 +2,7 @@ package homework5;
 
 import homework4.Homework;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -83,23 +84,24 @@ public class ArrayUtil {
     }
     
     public int[][] count3 (int[] a) {
+        ArrayList arrayList = new ArrayList<>();
+        for (int i = 0; i < a.length; i++) {
+            if (!arrayList.contains(a[i])){
+                arrayList.add(a[i]);
+            }
+        }
+        int b = arrayList.size();
         Homework my  = new Homework();
-        int      n   = (int) (my.fact(a.length) / (my.fact(a.length - 3) * my.fact(3)));
+        int      n   = (int) (my.fact(b) / (my.fact(b - 3) * my.fact(3)));
         int[][]  arr = new int[n][3];
-        int      l   = 0, m = 0;
-        for (int i = 0; i < a.length-2; i++) {
-            for (int j = 1; j < a.length - i; j++) {
-                for (int k = 1; k < a.length - i - j; k++) {
-                    m %= 3;
-                    arr[l][m] = a[i];
-                    m++;
-                    arr[l][m] = a[i + j];
-                    m++;
-                    arr[l][m] = a[i + j + k];
-                    m++;
-                    if (m == 3) {
-                        l++;
-                    }
+        int      l   = 0;
+        for (int i = 0; i < b-2; i++) {
+            for (int j = 1; j < b - i; j++) {
+                for (int k = 1; k < b - i - j; k++) {
+                    arr[l][0] = (int) arrayList.get(i);
+                    arr[l][1] = (int) arrayList.get(i+j);
+                    arr[l][2] = (int) arrayList.get(i+j+k);
+                    l++;
                 }
             }
         }
