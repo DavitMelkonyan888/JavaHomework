@@ -204,7 +204,6 @@ public class StringUtil_2 {
         return q;
     }
     
-    //TODO
     /**
      * Ex.10
      *
@@ -213,9 +212,8 @@ public class StringUtil_2 {
      */
     public String fun10(String a){
         StringUtil my = new StringUtil();
-        ArrayList q1 = new ArrayList<>();
-        ArrayList q2 = new ArrayList<>();
-        int si=0;
+        ArrayList<Integer> q1 = new ArrayList<Integer>();
+        ArrayList<Integer> q2 = new ArrayList<Integer>();
         for (int i = 0; i < a.length(); i++) {
             if (a.charAt(i) == '(') q1.add(i);
             else if (a.charAt(i) == ')') q2.add(i);
@@ -223,26 +221,13 @@ public class StringUtil_2 {
         if (q1.size() != q2.size()){
             return "Invalid Input";
         } else if (q1.size() == 0) {
-            return my.reverse(a);
+            return a;
         }
-        StringBuilder c = new StringBuilder();
-        for (int i = 0; i < a.length(); i++) {
-            if (a.charAt(i) == '(') {
-                si = i+1;
-                for (int j = i + 1; j < a.length(); j++) {
-                    if (a.charAt(j) == '(') {
-    
-                    } else if (a.charAt(j) == ')') {
-    
-                    }
-                }
-            } else if(a.charAt(i) == ')'){
-            
-            } else c.append(a.charAt(i));
+        StringBuilder c = new StringBuilder(a);
+        if (q1.get(0)>q2.get(0)){
+            return a.substring(q1.get(q1.size()-1)+1) + my.reverse(fun10(a.substring(q2.get(0)+1, q1.get(q1.size()-1)))) + a.substring(0, q2.get(0));
+        } else {
+            return a.substring(0, q1.get(0)) + my.reverse(fun10(a.substring(q1.get(0)+1, q2.get(q2.size()-1)))) +  a.substring(q2.get(q2.size()-1)+1);
         }
-        
-        
-        
-        return String.valueOf(c);
     }
 }

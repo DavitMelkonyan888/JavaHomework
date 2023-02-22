@@ -22,5 +22,6 @@ public class Main {
         //System.out.println(my.longestPalindrome("aabcbaaaaaaaaa"));
         //System.out.println(my.longestCommon("abcdef", "dbcdelabc"));
         //System.out.println(my.countCommonChars("abcdeeeeee", "bceffff"));
+        System.out.println(my.fun10("a(b(cd)olp(jkl)(ef)l)g"));
     }
 }
