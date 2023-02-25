@@ -1,6 +1,6 @@
-package homework5;
+package arrays;
 
-import homework4.Homework;
+import math.Homework;
 
 import java.util.ArrayList;
 import java.util.Arrays;

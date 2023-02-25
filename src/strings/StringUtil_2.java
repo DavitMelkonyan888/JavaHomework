@@ -1,4 +1,4 @@
-package homework6;
+package strings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +60,36 @@ public class StringUtil_2 {
         } else {
             return isPalindrome(a.substring(1, a.length() - 1));
         }
+    }
+    
+    /**
+     * Ex.3 isPalindrome
+     *
+     * @param a String
+     * @return boolean
+     */
+    public boolean isPalindrome_2 (String a) {
+        ArrayList arr = new ArrayList();
+        int q = 0;
+        for (int i = 0; i < a.length(); i++) {
+            if (arr.contains(i)){
+                continue;
+            }
+            int l = 1;
+            for (int j = i + 1; j < a.length(); j++) {
+                if (arr.contains(j)){
+                    continue;
+                } else {
+                    if (a.charAt(i) == a.charAt(j)){
+                        l++;
+                        arr.add(j);
+                    }
+                }
+            }
+            if (l%2 == 1) q++;
+        }
+        if (q>1) return false;
+        else return true;
     }
     
     /**

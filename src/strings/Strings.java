@@ -1,4 +1,4 @@
-package homework6;
+package strings;
 
 import java.util.ArrayList;
 

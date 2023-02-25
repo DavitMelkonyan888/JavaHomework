@@ -1,4 +1,4 @@
-package homework3;
+package classes;
 
 enum Gender{
     MALE,

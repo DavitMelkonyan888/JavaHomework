@@ -1,4 +1,4 @@
-package homework3;
+package classes;
 
 import java.math.BigInteger;
 
