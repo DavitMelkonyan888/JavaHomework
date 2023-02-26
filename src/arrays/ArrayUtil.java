@@ -8,6 +8,10 @@ import java.util.Scanner;
 
 public class ArrayUtil {
     
+    /**
+     * Typing positive Elements
+     * @param n an array of integers
+     */
     public void typePositives (int[] n) {
         for (int i = 0; i < n.length; i++) { 
             if (n[i] > 0) {
@@ -16,12 +20,20 @@ public class ArrayUtil {
         }
     }
     
+    /**
+     * Typing reverse
+     * @param s an array of short numbers
+     */
     public void typeReverse (short[] s) {
         for (int i = 0; i < s.length; i++) {
             System.out.println(s[s.length - 1 - i]);
         }
     }
     
+    /**
+     * Typing max value
+     * @param l an array of long numbers
+     */
     public void max (long[] l) {
         long max = l[0];
         for (int i = 1; i < l.length; i++) {
@@ -32,6 +44,10 @@ public class ArrayUtil {
         System.out.println(max);
     }
     
+    /**
+     * Typing min value
+     * @param f an array of float numbers
+     */
     public void min (float[] f) {
         float min = f[0];
         for (int i = 1; i < f.length; i++) {
@@ -42,12 +58,21 @@ public class ArrayUtil {
         System.out.println(min);
     }
     
+    /**
+     * Array cloning
+     * @param n 1st array
+     * @param m 2nd array
+     */
     public void texapoxel (int[] n, int[] m) {
         for (int i = 0; i < n.length; i++) {
             m[i] = n[i];
         }
     }
     
+    /**
+     * Making Arrays
+     * @return Array of integers
+     */
     public int[] make3rd () {
         Scanner sc = new Scanner(System.in);
         int     l  = sc.nextInt();
@@ -73,6 +98,12 @@ public class ArrayUtil {
         return array3;
     }
     
+    /**
+     * Counter
+     * @param a array
+     * @param k element
+     * @return count
+     */
     public int counter (int[] a, int k) {
         int c = 0;
         for (int i : a) {
@@ -83,6 +114,11 @@ public class ArrayUtil {
         return c;
     }
     
+    /**
+     * 3 elements arrays
+     * @param a array
+     * @return 2size array
+     */
     public int[][] count3 (int[] a) {
         ArrayList arrayList = new ArrayList<>();
         for (int i = 0; i < a.length; i++) {
@@ -108,6 +144,11 @@ public class ArrayUtil {
         return arr;
     }
     
+    /**
+     * Sorting
+     * @param arr1 array
+     * @return sorted array
+     */
     public int[] dasavorelNvazmanKargov (int[] arr1) {
         int   n    = arr1.length;
         int[] arr2 = new int[n];
@@ -118,6 +159,11 @@ public class ArrayUtil {
         return arr2;
     }
     
+    /**
+     * Odds to end
+     * @param a array
+     * @return sorted array
+     */
     public int[] oddsEnd (int[] a) {
         int[] b = new int[a.length];
         int   j = 0;
@@ -134,6 +180,11 @@ public class ArrayUtil {
         return b;
     }
     
+    /**
+     * deleting 0s
+     * @param a array
+     * @return changed array
+     */
     public int[] minus0 (int[] a) {
         int l = 0;
         for (int i = 0; i < a.length; i++) {
@@ -150,6 +201,12 @@ public class ArrayUtil {
         return b;
     }
     
+    /**
+     * chnvazoxneri hertakanutyan qanak
+     * @param a array
+     * @param b index
+     * @return count
+     */
     public int qan (int[] a, int b) {
         int qan = 1;
         for (int i = b; i < a.length - 1; i++) {
@@ -162,6 +219,10 @@ public class ArrayUtil {
         return qan;
     }
     
+    /**
+     * amenaerkar chnvazoxneri sharq
+     * @param a array
+     */
     public void queue (int[] a) {
         int qan = qan(a, 0);
         int ind = 0;
@@ -176,6 +237,10 @@ public class ArrayUtil {
         }
     }
     
+    /**
+     * from binary to decimal
+     * @param a array of 0s and 1s
+     */
     public void bin (int[] a) {
         int sum = 0;
         for (int i = a.length - 1, j = 0; i >= 0; i--, j++) {
@@ -184,6 +249,10 @@ public class ArrayUtil {
         System.out.println(sum);
     }
     
+    /**
+     * Typing half of matrix
+     * @param a 2-size array
+     */
     public void tpelGlxVerev (int[][] a) {
         for (int i = 0; i < a.length - 1; i++) {
             for (int j = i + 1; j < a[i].length; j++) {
@@ -193,6 +262,11 @@ public class ArrayUtil {
         }
     }
     
+    /**
+     * rotate matrix
+     * @param a matrix
+     * @return rotated matrix
+     */
     public int[][] rotate (int[][] a) {
         int[][] b = new int[a.length][a.length];
         for (int i = 0; i < a.length; i++) {
@@ -203,6 +277,10 @@ public class ArrayUtil {
         return b;
     }
     
+    /**
+     * Odd or Even
+     * @param a matrix
+     */
     public void oddOrEven (int[][] a) {
         boolean t = true;
         for (int i = 0; i < a.length; i++) {

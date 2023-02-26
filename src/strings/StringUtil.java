@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class StringUtil {
 
     /**
-     *
+     * Concat
      * */
     public void stringConcat(){
         String a = "hello" + "world";
@@ -29,6 +29,10 @@ public class StringUtil {
         System.out.println(b);
     }
     
+    /**
+     * Typing each word in new line
+     * @param a String
+     */
     public void newLine(String a){
         for (int i = 0; i < a.length(); i++) {
             if (a.charAt(i)==' ') {
@@ -37,6 +41,11 @@ public class StringUtil {
         }
     }
     
+    /**
+     * Reverse
+     * @param a String
+     * @return reversed String
+     */
     public String reverse(String a){
         StringBuilder b = new StringBuilder("");
         for (int i = a.length()-1; i >=0; i--) {
@@ -45,6 +54,12 @@ public class StringUtil {
         return String.valueOf(b);
     }
     
+    /**
+     * Counter
+     * @param a
+     * @param token
+     * @return
+     */
     public int counter(String a, String token){
         int k = 0, ind = 0;
         while(a.indexOf(token, ind)!=-1){
@@ -54,6 +69,11 @@ public class StringUtil {
         return k;
     }
     
+    /**
+     * To upper case
+     * @param a
+     * @return
+     */
     public String toUpperCase(String a){
 //        String c = "";
 //        for (int i = 0; i < a.length(); i++) {
@@ -71,6 +91,9 @@ public class StringUtil {
         return String.valueOf(b);
     }
     
+    /**
+     * 20 symbols
+     */
     public void symbols20(){
         Scanner sc = new Scanner(System.in);
         String a = sc.nextLine();
@@ -80,6 +103,11 @@ public class StringUtil {
         }
     }
     
+    /**
+     * deleting String
+     * @param a
+     * @return
+     */
     public String delete(String a){
 //        String c = a.replace('a', (char) 0);
 //        return c;
@@ -100,6 +128,11 @@ public class StringUtil {
         return String.valueOf(b);
     }
     
+    /**
+     * Replacing String
+     * @param a
+     * @return
+     */
     public String replace(String a){
         //a = a.replace('a', '*');
         //return a;
@@ -112,6 +145,11 @@ public class StringUtil {
         return c;
     }
     
+    /**
+     * Longest word
+     * @param a
+     * @return
+     */
     public String longestWord(String a){
         int si1=0, si2 =0, ei=0, count1=0, count2=0;
         boolean t =true;
@@ -141,6 +179,12 @@ public class StringUtil {
         return  b;
     }
     
+    /**
+     * Index
+     * @param a
+     * @param b
+     * @return
+     */
     public int indexOf(String a, String b){
         int q = 0;
         boolean p = false;
@@ -159,6 +203,11 @@ public class StringUtil {
         else return -1;
     }
     
+    /**
+     * Typing subline
+     * @param line
+     * @param n
+     */
     public void printSubLine(String line, int n){
         for (int i = 0; i < n + 1; i++) {
             System.out.print(line.charAt(i));
@@ -166,6 +215,11 @@ public class StringUtil {
         System.out.println();
     }
     
+    /**
+     * Typing subline
+     * @param line
+     * @param n
+     */
     public void printSubLine(StringBuilder line, int n){
         for (int i = 0; i < n + 1; i++) {
             System.out.print(line.charAt(i));
@@ -173,13 +227,23 @@ public class StringUtil {
         System.out.println();
     }
     
+    /**
+     * Is Not Empty Or Null
+     * @param a
+     * @return
+     */
     public boolean isNotEmptyOrNull(String a){
         boolean t = true;
         if (a == null || a.equals("")) t = false;
         return  t;
     }
     
-    public String longestExpresion(String a){
+    /**
+     * Longest expression
+     * @param a
+     * @return
+     */
+    public String longestExpression(String a){
         int si1=0, si2 =0, ei=0, count1=0, count2=0;
         boolean t =true;
         for (int i = 0; i < a.length(); i++) {

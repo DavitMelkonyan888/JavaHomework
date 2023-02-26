@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 public class Strings {
     
+    /**
+     * Sum of  digits
+     * @param a string
+     * @return number
+     */
     public int sumOfDigits (String a) {
         char[] c = new char[] {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
         int    t = 0;
@@ -17,6 +22,12 @@ public class Strings {
         return t;
     }
     
+    /**
+     * Mixing 2 strings
+     * @param a string
+     * @param b string
+     * @return mixed string
+     */
     public String mix (String a, String b) {
         StringBuilder my  = new StringBuilder();
         int           min = a.length() > b.length() ? b.length() : a.length();
@@ -39,6 +50,11 @@ public class Strings {
         return String.valueOf(my);
     }
     
+    /**
+     * Count of words
+     * @param a String
+     * @return number
+     */
     public int numberOfWords (String a) {
         int k = 1;
         for (int i = 0; i < a.length(); i++) {
@@ -49,6 +65,11 @@ public class Strings {
         return k;
     }
     
+    /**
+     * Reverse sentence
+     * @param a String
+     * @return String
+     */
     public String revertSentence (String a) {
         ArrayList my = new ArrayList();
         ArrayList num = new ArrayList();
@@ -84,6 +105,12 @@ public class Strings {
         return String.valueOf(s);
     }
     
+    /**
+     * Counter
+     * @param a String
+     * @param b String
+     * @return number
+     */
     public int counter(String a, String b){
         int q = 0;
         boolean p = false;
@@ -99,6 +126,11 @@ public class Strings {
         return q;
     }
     
+    /**
+     * Sorting String
+     * @param a String
+     * @return Sorted String
+     */
     public String sort(String a){
         char[] b = new char[a.length()];
         for (int i = 0; i < a.length(); i++) {
@@ -114,6 +146,11 @@ public class Strings {
         return String.valueOf(b);
     }
     
+    /**
+     * Compressing String
+     * @param a String
+     * @return Compressed String
+     */
     public String compressed(String a){
         StringBuilder my = new StringBuilder();
         int q = 1;

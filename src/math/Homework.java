@@ -4,6 +4,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Homework {
+    
+    /**
+     * rice bags
+     * @param x integer
+     * @param y integer
+     * @param z integer
+     * @return boolean
+     */
 
     public boolean riceBags(int x, int y, int z){
         int kilo1 = 1, kilo5 = 5;
@@ -13,7 +21,12 @@ public class Homework {
 
         return true;
     }
-
+    
+    /**
+     * isPrime
+     * @param a integer
+     * @return boolean
+     */
     public boolean isPrime(int a){
         if (a < 2) return false;
         for (int i = 2; i < a; i++){
@@ -21,7 +34,12 @@ public class Homework {
         }
         return true;
     }
-
+    
+    /**
+     * Factorial
+     * @param a number
+     * @return factorial of number
+     */
     public int factor(int a){
         int x = 1;
         for (int i=2; i < a; i++){
@@ -29,18 +47,28 @@ public class Homework {
         }
         return x;
     }
-
+    
+    /**
+     * Random number [1-100]
+     * @return number
+     */
     public int rand(){
         Random my = new Random();
         return my.ints(1, 101).findFirst().getAsInt();
     }
-
+    
+    /**
+     * Odd or Even
+     */
     public void fun3(){
         int x = rand();
         boolean t = x % 2 == 0? true : false;
         System.out.println(x + " " + t);
     }
-
+    
+    /**
+     * Max and Min
+     */
     public void fun4(){
         int i = 0;
         int x1 = rand();
@@ -71,7 +99,10 @@ public class Homework {
         System.out.println("max - " + max);
         System.out.println("min - " + min);
     }
-
+    
+    /**
+     * Multiply Table
+     */
     public void mulTab(){
         Scanner my = new Scanner(System.in);
         int a;
@@ -80,7 +111,13 @@ public class Homework {
             System.out.println(a + " * " + i + " = " + (a * i));
         }
     }
-
+    
+    /**
+     * Power of numbers
+     * @param a number1
+     * @param b number2
+     * @return number1^number2
+     */
     public double pow(double a, int b) {
         if (a == 0 && b == 0){
             return Double.NaN;
@@ -98,7 +135,11 @@ public class Homework {
         }
         else return 1;
     }
-
+    
+    /**
+     * reverse
+     * @return reversed number
+     */
     public int pol() {
         Scanner my = new Scanner(System.in);
         int a = my.nextInt();
@@ -115,7 +156,10 @@ public class Homework {
         }
         return x;
     }
-
+    
+    /**
+     * isPrime with input
+     */
     public void inpPr(){
         Scanner my = new Scanner(System.in);
         int x;
@@ -126,7 +170,10 @@ public class Homework {
         if(isPrime(x)) System.out.println("The number you typed is Prime :) ");
         else System.out.println("The number you typed is Not Prime :( ");
     }
-
+    
+    /**
+     * Adding
+     */
     public void twoNums(){
         do{
             Scanner myNum = new Scanner(System.in);
@@ -145,7 +192,10 @@ public class Homework {
             if (x.toUpperCase().equals("N")) break;
         } while(true);
     }
-
+    
+    /**
+     * Sorting numbers by sign
+     */
     public void manyNums(){
         int positive = 0, negative = 0, zero = 0, inp;
         System.out.println("Write as  numbers as you want");
@@ -172,7 +222,10 @@ public class Homework {
         System.out.println("Negative numbers count " +negative);
         System.out.println("Zeros count " +zero);
     }
-
+    
+    /**
+     * Max and Min
+     */
     public void manyNumsMinMax(){
         int max, min = 0, inp;
         System.out.println("Write as  numbers as you want");
@@ -200,7 +253,12 @@ public class Homework {
         System.out.println("Max - " + max);
         System.out.println("Min - " + min);
     }
-
+    
+    /**
+     * Is Armstrong number or not
+     * @param a number
+     * @return boolean
+     */
     public boolean isArm(int a) {
         int i = 0;
         int b = a;
@@ -217,13 +275,20 @@ public class Homework {
         if(a == x) return true;
         else return false;
     }
-
+    
+    /**
+     * Typing all Armstrong numbers [1-500]
+     */
     public void typeArm() {
         for (int i = 1; i < 501; i++){
             if(isArm(i)) System.out.println(i);
         }
     }
-
+    
+    /**
+     * Ex. 9
+     * @return double
+     */
     public double fun9(){
         Scanner my = new Scanner(System.in);
         int n = my.nextInt();
@@ -233,7 +298,11 @@ public class Homework {
         }
         return x;
     }
-
+    
+    /**
+     * Ex. 10
+     * @return double
+     */
     public double fun10(){
         Scanner my = new Scanner(System.in);
         int n = my.nextInt();
@@ -246,7 +315,10 @@ public class Homework {
         }
         return x;
     }
-
+    
+    /**
+     * Guessing number
+     */
     public void guess(){
         int x = rand();
         Scanner my = new Scanner(System.in);
@@ -259,8 +331,10 @@ public class Homework {
         }
         System.out.println("Congratulations!!!!!!!");
     }
-
-
+    
+    /**
+     * Ex. 12.1
+     */
     public void fun12_1(){
         for (int i =0; i < 4; i++) {
             for (int j = 0; j < 10; j++)
@@ -268,7 +342,10 @@ public class Homework {
             System.out.println();
         }
     }
-
+    
+    /**
+     * Ex. 12.2
+     */
     public void fun12_2(){
         for (int i = 1; i < 6; i++) {
             for (int j = 0; j < i; j++)
@@ -276,7 +353,10 @@ public class Homework {
             System.out.println();
         }
     }
-
+    
+    /**
+     * Ex. 12.3
+     */
     public void fun12_3(){
         for (int i = 1 ; i<6; i++){
             for (int j = 0; j < 5 - i ; j++){
@@ -288,7 +368,10 @@ public class Homework {
             System.out.println();
         }
     }
-
+    
+    /**
+     * Ex. 12.4
+     */
     public void fun12_4(){
         for (int i = 1 ; i < 6; i++){
             for (int j = 0; j <   (9 - (2 * i - 1)) / 2 ; j++){
@@ -300,7 +383,10 @@ public class Homework {
             System.out.println();
         }
     }
-
+    
+    /**
+     * Ex. 12.5
+     */
     public void fun12_5(){
         for (int i = 1 ; i < 6; i++){
             for (int j = 0; j < (9 - (2 * i - 1)) / 2 ; j++){
@@ -312,7 +398,10 @@ public class Homework {
             System.out.println();
         }
     }
-
+    
+    /**
+     * Ex. 12.6
+     */
     public void fun12_6(){
         for (int i = 1 ; i < 6; i++){
             for (int j = 0; j < (9 - (2 * i - 1)) / 2 ; j++){
@@ -329,7 +418,12 @@ public class Homework {
             System.out.println();
         }
     }
-
+    
+    /**
+     * Factorial
+     * @param a number
+     * @return factorial of number
+     */
     public double fact(int a){
         if(a <= 0) return 1.0;
         int b = a;
@@ -338,7 +432,13 @@ public class Homework {
             c *= i;
         return c;
     }
-
+    
+    /**
+     * Sinus
+     * @param y angle in degrees
+     * @param n accuracy
+     * @return double
+     */
     public double sin(double y, int n) {
         y %= 360;
         double x = y * Math.PI / 180;
@@ -349,7 +449,13 @@ public class Homework {
         }
         return a;
     }
-
+    
+    /**
+     * Cosinus
+     * @param y angle in degrees
+     * @param n accuracy
+     * @return double
+     */
     public double cos(double y, int n) {
         y %= 360;
         double x = y * Math.PI / 180;
