@@ -7,7 +7,7 @@ public class Main {
     
     public static void main (String[] args) {
 //        for (Planets i: Planets.values()){
-//            System.out.println(i.getName() + " " + i.getYearLength() + " " + i.getDistanceFromSun());
+//            System.out.println(i.getName() + " " + i.getYearLength() + " " + i.getDistanceFromSun() + " " + i.getMass());
 //        }
 //        for (Week i: Week.values()){
 //            System.out.println(i + " " + i.getNumber());
@@ -25,9 +25,9 @@ public class Main {
 //        for(ShapeType i : ShapeType.values()){
 //            System.out.println(i + " " + i.getArea() + " " + i.getPerimeter());
 //        }
-        Card my = Card.H7;
-        System.out.println(my);
-        System.out.println(my.getSuit() + "  " + my.getRank());
+//        Card my = Card.H7;
+//        System.out.println(my);
+//        System.out.println(my.getSuit() + "  " + my.getRank());
     }
     
 }
