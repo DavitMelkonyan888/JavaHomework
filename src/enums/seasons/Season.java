@@ -1,10 +1,7 @@
 package enums.seasons;
 
 public enum Season {
-    SPRING,
-    SUMMER,
-    FALL,
-    WINTER;
+    SPRING,    SUMMER,    FALL,    WINTER;
     
     public static Season getSeasonByTemperature(int temp){
         if (temp < 5) return Season.WINTER;
